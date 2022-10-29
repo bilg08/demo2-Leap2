@@ -1,0 +1,13 @@
+.headerContainer{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navItems{
+    display: flex;
+    width: 15%;
+    list-style: none;
+    justify-content: space-between;
+}
