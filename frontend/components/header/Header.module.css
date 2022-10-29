@@ -1,0 +1,17 @@
+.headerContainer{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border-bottom-color: #e4e2e0;
+    min-height: 3.25rem;
+}
+.navItems{
+    display: flex;
+    width: 200px;
+    list-style: none;
+    justify-content: space-between;
+}
