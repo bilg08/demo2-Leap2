@@ -9,7 +9,7 @@ const AdScheme = new mongoose.Schema({
   },
   photo: {
     type: String,
-    default: "no-photo.jpeg",
+      default: "no-photo.jpeg"
   },
   price: {
     type: Number,
