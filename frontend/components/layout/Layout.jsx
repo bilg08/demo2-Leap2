@@ -1,13 +1,13 @@
 import React from 'react';
 import { Header, Footer } from '../index';
-import styles from './Layout.module.css'
+import styles from './Layout.module.css';
 export const LayOut = ({children}) => {
     return (
       <div className={styles.container}>
         <div className={styles.mainContainer}>
-          <Header />
+          <Header/>
           {children}
-          <Footer />
+          <Footer/>
         </div>
       </div>
     );

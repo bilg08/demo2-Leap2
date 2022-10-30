@@ -5,8 +5,9 @@ export const Header = () => {
     return (
       <div className={styles.headerContainer}>
         <div className={styles.sectionWithLogoAndFindJobs}>
-          <Image width={80} height={50} src={logo} />
-          <ul>
+          <h1>LOGO</h1>
+          {/* <Image width={80} height={50} src={logo} /> */}
+          <ul className={styles.sectionWithLogoAndFindJobsUl}>
             <li>Ажил Хайх</li>
             <li>Эрэлттэй хүмүүс</li>
           </ul>
