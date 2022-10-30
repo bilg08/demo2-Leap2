@@ -9,7 +9,18 @@
     border-bottom-color: #e4e2e0;
     min-height: 3.25rem;
 }
-.navItems{
+.sectionWithLogoAndFindJobs{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+.sectionWithLogoAndFindJobs ul{
+    display: flex;
+    list-style: none;
+    width:250px;
+    justify-content: space-between;
+}
+.sectionWithLoginAndSignUp{
     display: flex;
     width: 200px;
     list-style: none;
