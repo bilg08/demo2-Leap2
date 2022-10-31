@@ -3,11 +3,11 @@
     width: 100%;
     height: auto;
   }
-  /* .mainContainer {
+  .mainContainer {
    max-width: 1250px;
     height: 100%;
     margin: auto;
-  } */
+  }
 }
 .container {
     width: 100%;

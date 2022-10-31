@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const AdScheme = new mongoose.Schema({
+const AdvertisingScheme = new mongoose.Schema({
   owner: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
@@ -25,4 +25,4 @@ const AdScheme = new mongoose.Schema({
     default: Date.now,
   },
 });
-module.exports = AdScheme;
+module.exports = mongoose.model('advertising',AdvertisingScheme);

@@ -1,3 +1,11 @@
 .homeContainer {
-  background: red;
+  border: 0.0625rem solid #e4e2e0;
+  height: 250px;
+  width: 100%;
+}
+.mainHomeContainer{
+  width: 1350px;
+  height: 100%;
+  border: 1px solid red;
+  margin: auto;
 }
