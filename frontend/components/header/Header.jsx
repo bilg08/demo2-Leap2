@@ -1,4 +1,4 @@
-import logo from '../../asset/logo.png'
+// import logo from '../../asset/logo.png'
 import Image from "next/image";
 import styles from './Header.module.css';
 import {useRouter} from 'next/router'
@@ -7,7 +7,7 @@ export const Header = () => {
     return (
       <div className={styles.headerContainer}>
         <div className={styles.sectionWithLogoAndFindJobs}>
-          <Image alt='' width={80} height={50} src={logo} />
+          <h1>Logo</h1>
           <ul className={styles.sectionWithLogoAndFindJobsUl}>
             <li>Ажил Хайх</li>
             <li>Эрэлттэй хүмүүс</li>
