@@ -17,6 +17,9 @@
   border: 0.0625rem solid #e4e2e0;
   padding: 20px;
 }
+.adsContainer{
+  display: flex;
+}
 @media (max-width:600px) {
   .sectionWithSearch{
     display: flex;
