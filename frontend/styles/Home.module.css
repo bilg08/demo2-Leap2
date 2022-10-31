@@ -20,6 +20,13 @@
 .adsContainer{
   display: flex;
 }
+.allAdsContainer{
+  width: 50%;
+}
+.adDetailContainer{
+  width: 50%;
+  height: 100%;
+}
 @media (max-width:600px) {
   .sectionWithSearch{
     display: flex;
