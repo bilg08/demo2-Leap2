@@ -1,7 +1,9 @@
 import logo from '../../asset/logo.png'
 import Image from "next/image";
-import styles from './Header.module.css'
+import styles from './Header.module.css';
+import {useRouter} from 'next/router'
 export const Header = () => {
+  const router = useRouter()
     return (
       <div className={styles.headerContainer}>
         <div className={styles.sectionWithLogoAndFindJobs}>
@@ -12,7 +14,7 @@ export const Header = () => {
           </ul>
         </div>
         <ul className={styles.sectionWithLoginAndSignUp}>
-          <li>Нэвтрэх</li>
+          <li onClick={()=>router.push('loginPage')}>Нэвтрэх</li>
           <li>Бүртгүүлэх</li>
         </ul>
       </div>
