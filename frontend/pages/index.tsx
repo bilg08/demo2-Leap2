@@ -1,10 +1,11 @@
 import styles from '../styles/Home.module.css'
 import React, { useEffect } from 'react';
-import { Input, Button } from '../components/index'
+import { Input, Button,Card } from '../components/index'
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 export default function Home() {
   const [userInput, setUserInput] = React.useState({});
+  const [ads,setAds] = React.useState([1,2,3])
   return (
     <div className={styles.container}>
       <div className={styles.mainHomeContainer}>
@@ -17,6 +18,11 @@ export default function Home() {
           />
           <Input placeholder="Хичээл" userInput={userInput} name="subject" onchange={setUserInput} icon={<MdLocationOn />} />
           <Button>Хайх</Button>
+        </div>
+        <div className={styles.adsContainer}>
+         {ads.map((ad,index) => {
+          return <Card key={index}/>
+         })}
         </div>
       </div>
     </div>
