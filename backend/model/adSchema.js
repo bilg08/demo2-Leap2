@@ -7,14 +7,24 @@ const AdvertisingScheme = new mongoose.Schema({
     required: [true, "Нэрийг оруулна уу"],
     maxLength: [50, "НЭРНЫ УРТ ИХ БАЙНА"],
   },
+  isNew: {
+    type: String,
+    required: [true, "Шинэ эсэхийг оруулна уу"],
+    default: "Үнэ тохирно",
+  },
+  advertisingHeader: {
+    type: String,
+    required: [true, "Зарын гарчгийг оруулна уу"],
+    maxLength: [50, "НЭРНЫ УРТ ИХ БАЙНА"],
+  },
   photo: {
     type: String,
-      default: "no-photo.jpeg"
+    default: "no-photo.jpeg",
   },
   price: {
     type: Number,
     required: [true, "Үнийг оруулна уу"],
-    default:"Үнэ тохирно"
+    default: "Үнэ тохирно",
   },
   detail: {
     type: String,

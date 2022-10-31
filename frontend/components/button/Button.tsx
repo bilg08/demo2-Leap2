@@ -1,8 +1,10 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './Button.module.css';
-
-export const Button = (props:ButtonProps) => {
-    return (<button onClick={props.onClick} className={styles.Button}>
+//Bicegelel adilhan
+// const Button = (props:ButtonProps) => <div>{message}</div>;
+export const Button :React.FC<ButtonProps> = (props) => {
+    return (
+        <button onClick={props.onClick} className={styles.Button}>
         {props.children}
         </button>)
 }
