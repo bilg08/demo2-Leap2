@@ -1,11 +1,28 @@
-.homeContainer {
+.container {
   border: 0.0625rem solid #e4e2e0;
-  height: 250px;
+  min-height: 120px;
   width: 100%;
 }
-.mainHomeContainer{
-  width: 1350px;
+ .mainHomeContainer{
+  max-width: 1350px;
   height: 100%;
-  border: 1px solid red;
   margin: auto;
+
+}
+.sectionWithSearch{
+  display: flex;
+  justify-content: center;
+  gap:10px;
+  align-items: center;
+  border: 0.0625rem solid #e4e2e0;
+
+}
+@media (max-width:600px) {
+  .sectionWithSearch{
+    display: flex;
+    justify-content: center;
+    gap:10px;
+    align-items: center;
+    flex-flow: column;
+  }
 }

@@ -1,22 +1,22 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import React from 'react';
-import {Input} from '../components/index'
+import React, { useEffect } from 'react';
+import { Input, Button } from '../components/index'
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 export default function Home() {
-  const [userInput,setUserInput] = React.useState({});
-  function handleUserInput(e) {
-      setUserInput({...userInput,[e.target.name]:e.target.value})
-  }
+  const [userInput, setUserInput] = React.useState({});
   return (
     <div className={styles.container}>
       <div className={styles.mainHomeContainer}>
       <div className={styles.sectionWithSearch}>
-         <Input placeholder="Сургууль" icon={<AiOutlineSearch/>} name="school"  onChange={handleUserInput}/>
-         <Input placeholder="Хичээл" name="subject"  onChange={handleUserInput} icon={<MdLocationOn/>}/>
-         <button>HHAA</button>
+          <Input placeholder="Сургууль"
+            userInput={userInput}
+            icon={<AiOutlineSearch />}
+            name="school"
+            onchange={setUserInput}
+          />
+          <Input placeholder="Хичээл" userInput={userInput} name="subject" onchange={setUserInput} icon={<MdLocationOn />} />
+          <Button>Хайх</Button>
         </div>
       </div>
     </div>
