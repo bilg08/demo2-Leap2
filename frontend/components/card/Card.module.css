@@ -1,0 +1,12 @@
+.container{
+    height: auto;
+    border: 1px solid silver;
+    border-radius:20px;
+    width: 80%;
+    height: auto;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}

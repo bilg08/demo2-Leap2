@@ -18,10 +18,14 @@
   max-width: 1350px;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin:20px auto;
 }
 .allAdsContainer{
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  margin: auto
 }
 .adDetailContainer{
   width: 50%;

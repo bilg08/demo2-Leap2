@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css'
-import React, { useEffect } from 'react';
+import React, {  } from 'react';
 import { Input, Button,Card } from '../components/index'
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
@@ -37,11 +37,17 @@ export default function Home() {
         <div className={styles.adsContainer}>
           <div className={styles.allAdsContainer}>
             {ads.map((ad,index) => {
-           return <Card key={index} data={ad} />
+            return(
+            <Card key={index} >
+                <h1>{ad.advertisingHeader}</h1>
+                <h3>Захиалагч:{ad.owner.name}</h3>
+                <p>{ad.detail}</p>
+                <Button onClick={() => console.log()}>Хийх</Button>
+           </Card>)
          })}
           </div>
           <div className={styles.adDetailContainer}>
-            details 
+            <Card></Card> 
           </div>
         </div>
     </div>

@@ -5,7 +5,7 @@ type InputComponentsPropsType = {
   icon: React.ReactElement,
   onchange?: Dispatch<SetStateAction<object>>|any,
   name:any,
-  userInput?:object|any
+  userInput?:object
 }
 export const Input = ({placeholder,icon,onchange,name,userInput}:InputComponentsPropsType) => {
   return(
