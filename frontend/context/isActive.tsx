@@ -10,14 +10,13 @@ interface CollectionContextInterface {
 }
 
 export const CollectionContext = createContext<CollectionContextInterface>({
-  cActive: false,
-  setCactive: (_val: any) => {},
+  cActive: true,
+  setCactive: (val: any) => {},
 });
 
 export const CollectionContextProvider = ({ children }: Props) => {
   // Button false or true
-  const [cActive, setCactive] = useState<any>(false);
-
+  const [cActive, setCactive] = useState<CollectionContextInterface|true>(true);
   return (
     <CollectionContext.Provider
       value={{

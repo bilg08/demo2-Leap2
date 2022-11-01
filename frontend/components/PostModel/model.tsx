@@ -2,11 +2,10 @@ import { useCollectionContext } from "../../context/isActive";
 
 const PostModal = () => {
 
-  const { cActive, setCactive } = useCollectionContext();
-
-    const close = () => {
-        setCactive(false)
-    }
+  const { setCactive } = useCollectionContext();
+  const close = () => {
+    setCactive((e: any)=>!e);
+  }
 
   return (
     <div

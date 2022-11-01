@@ -1,19 +1,20 @@
-import {useContext,createContext, useState} from 'react'
+import {useContext,createContext, useState,ReactNode} from 'react'
+type Props = {
+  children: ReactNode;
+};
 
-export interface ITodo {
-    id: number;
-    title: string;
-    description: string;
-    status: boolean;
-  }
-type TodoContextType = {
-   selectedAd:any,
-   setSelectedAd:() => void
-  };
-const SelectedAdContext = createContext();
+interface CollectionContextInterface {
+  selectedAd: any;
+  setSelectedAd: (_val: any) => void;
+}
 
-export const SelectedAdContextProvider = ({children}) => {
-  const [selectedAd,setSelectedAd] = useState()
+export const SelectedAdContext = createContext<CollectionContextInterface>({
+  selectedAd: false,
+  setSelectedAd: (_val: any) => {},
+});
+
+export const SelectedAdContextProvider = ({children}:Props) => {
+  const [selectedAd,setSelectedAd] = useState<CollectionContextInterface|Boolean>()
     return(
         <SelectedAdContext.Provider value={{selectedAd,setSelectedAd}}>
             {children}

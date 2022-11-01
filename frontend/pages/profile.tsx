@@ -3,12 +3,13 @@ import { ReceivedPosts } from "../components/post/receivedpost";
 import PostModal from "../components/PostModel/model";
 import { useCollectionContext } from "../context/isActive";
 const UserProfile = () => {
-	const {cActive} = useCollectionContext()
+	const { cActive } = useCollectionContext();
+	
 	return (
 		<div style={{ display: "flex", flexDirection: "row" }}>
 			<UserSideBar />
 			<ReceivedPosts />
-			{cActive ? <PostModal/> : null}
+			{cActive? <PostModal/> : ""}
 		</div>
 	);
 };
