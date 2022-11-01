@@ -13,7 +13,7 @@ export const Header = () => {
           </ul>
         </div>
         <ul className={styles.sectionWithLoginAndSignUp}>
-          <li onClick={()=>router.push('loginPage')}>Нэвтрэх/Бүртгүүлэх</li>
+          <li onClick={()=>router.push('profile')}>Нэвтрэх/Бүртгүүлэх</li>
         </ul>
       </div>
     );
