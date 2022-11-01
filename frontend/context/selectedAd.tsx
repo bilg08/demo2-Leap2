@@ -1,22 +1,18 @@
-import {useContext,createContext, useState} from 'react'
+import {useContext,createContext, useState, ReactNode,SetStateAction,Dispatch} from 'react'
 
-export interface ITodo {
-    id: number;
-    title: string;
-    description: string;
-    status: boolean;
-  }
-type TodoContextType = {
-   selectedAd:any,
-   setSelectedAd:() => void
-  };
-const SelectedAdContext = createContext();
+type context = {
+  selectedAd:object,
+  children:ReactNode,
+  setSelectedAd:React.Dispatch<React.SetStateAction<string>>
+}
 
-export const SelectedAdContextProvider = ({children}) => {
-  const [selectedAd,setSelectedAd] = useState()
+const SelectedAdContext = createContext<object|null>(null);
+
+export const SelectedAdContextProvider :React.FC<context> = (props) => {
+  const [selectedAd,setSelectedAd] = useState(null)
     return(
         <SelectedAdContext.Provider value={{selectedAd,setSelectedAd}}>
-            {children}
+            {props.children}
         </SelectedAdContext.Provider>
     )
 }

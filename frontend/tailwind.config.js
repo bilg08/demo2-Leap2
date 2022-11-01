@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./components/userSideBar/userSideBar.tsx", "./components/post/receivedpost.tsx"],
-  theme: {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],  theme: {
     extend: {},
   },
   plugins: [],

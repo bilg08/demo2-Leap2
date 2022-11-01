@@ -1,5 +1,4 @@
-import UserSideBar from "../components/userSideBar/userSideBar";
-import { ReceivedPosts } from "../components/post/receivedpost";
+import  {UserSideBar,ReceivedPosts} from '../components/index'
 const UserProfile = () => {
 	return (
 		<div style={{ display: "flex", flexDirection: "row" }}>
