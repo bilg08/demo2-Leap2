@@ -15,24 +15,28 @@ type adsType = {
   createdAt:String
 }
 
-
+type userInputType = {
+  subject: String|"subject",
+  school:String|"school"
+}
 
 export default function Home() {
   const {selectedAd,setSelectedAd} = useSelectedContext()
-  const [userInput, setUserInput] = React.useState({});
+  const [userInput, setUserInput] = React.useState<userInputType|object>();
   const [ads, setAds] = React.useState<adsType[]>(advertisings)
   const handleSearch = () => {
-    
+     
   }
 
   return (
     <div className='w-full'>
       <div className='flex h-40 justify-center flex-col items-center md:flex-row m-auto max-w-screen-xl gap-5'>
-          <Input placeholder="Сургууль"
+        <Input placeholder="Сургууль"
+          onchange={setUserInput} userInput={userInput}
             icon={<AiOutlineSearch />}
             name="school"
           />
-          <Input placeholder="Хичээл"  name="subject"  icon={<MdLocationOn />} />
+          <Input placeholder="Хичээл" onchange={setUserInput} userInput={userInput} name="subject"  icon={<MdLocationOn />} />
           <Button onClick={handleSearch}>Хайх</Button>
         </div>
         <div style={{width:`100%`,backgroundColor: `#f6f5f4`}}>

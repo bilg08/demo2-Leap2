@@ -5,4 +5,7 @@ export * from './Input';
 export * from './Button';
 export * from './Card';
 export * from './userSideBar';
-export * from './receivedpost'
+export * from './receivedpost';
+export * from './postModel/Postmodel';
+export * from './ui/MenuList';
+export * from "./ui/MenuList2";

@@ -1,18 +1,23 @@
-import {useContext,createContext, useState, ReactNode,SetStateAction,Dispatch} from 'react'
+import {useContext,createContext, useState,ReactNode} from 'react'
+type Props = {
+  children: ReactNode;
+};
 
-type context = {
-  selectedAd:object,
-  children:ReactNode,
-  setSelectedAd:React.Dispatch<React.SetStateAction<string>>
+interface CollectionContextInterface {
+  selectedAd: any;
+  setSelectedAd: (_val: any) => void;
 }
 
-const SelectedAdContext = createContext<object|null>(null);
+export const SelectedAdContext = createContext<CollectionContextInterface>({
+  selectedAd: false,
+  setSelectedAd: (_val: any) => {},
+});
 
-export const SelectedAdContextProvider :React.FC<context> = (props) => {
-  const [selectedAd,setSelectedAd] = useState(null)
+export const SelectedAdContextProvider = ({children}:Props) => {
+  const [selectedAd,setSelectedAd] = useState<CollectionContextInterface|Boolean>()
     return(
         <SelectedAdContext.Provider value={{selectedAd,setSelectedAd}}>
-            {props.children}
+            {children}
         </SelectedAdContext.Provider>
     )
 }

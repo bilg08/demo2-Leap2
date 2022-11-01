@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <header>
     <nav className="bg-white border-gray-200  py-2.5 ">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen">
             <a onClick={() => router.push('/')} className="flex items-center">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" className="mr-3 h-6 sm:h-9" alt="" />
                 <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">React</span>
