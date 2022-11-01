@@ -18,6 +18,7 @@
   max-width: 1350px;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 .allAdsContainer{
   width: 50%;

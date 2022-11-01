@@ -1,5 +1,15 @@
 import {useContext,createContext, useState} from 'react'
 
+export interface ITodo {
+    id: number;
+    title: string;
+    description: string;
+    status: boolean;
+  }
+type TodoContextType = {
+   selectedAd:any,
+   setSelectedAd:() => void
+  };
 const SelectedAdContext = createContext();
 
 export const SelectedAdContextProvider = ({children}) => {

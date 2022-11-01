@@ -23,7 +23,6 @@ export default function Home() {
   const handleSearch = () => {
     
   }
-useEffect(() => console.log(selectedAd))
 
   return (
     <div className={styles.container}>
