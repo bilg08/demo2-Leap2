@@ -1,35 +1,29 @@
 import styles from '../styles/Home.module.css'
-import React, {  } from 'react';
+import React, { useEffect } from 'react';
 import { Input, Button,Card } from '../components/index'
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 import advertisings from "../data/advertisings.json" assert {type: 'json'}
+import { useSelectedContext } from '../context';
 
 type adsType = {
   advertisingHeader:String,
   detail:String,
   owner:{
     name:String
-  }
+  },
+  createdAt:String
 }
 
 
 export default function Home() {
-  
+  const {selectedAd,setSelectedAd} = useSelectedContext()
   const [userInput, setUserInput] = React.useState({});
-  const [ads, setAds] = React.useState<adsType[]>([])
+  const [ads, setAds] = React.useState<adsType[]>(advertisings)
   const handleSearch = () => {
     
   }
-  new Promise(function (resolve, reject) {
-    if (1 === 1) {
-      resolve('right');
-      console.log(typeof advertisings)
-      setTimeout(() => setAds(advertisings),1500)
-    } else {
-      reject('false');
-    }
-  })
+
   return (
     <div className={styles.container}>
       <div className={styles.sectionWithSearch}>
@@ -44,18 +38,27 @@ export default function Home() {
         <div className={styles.adsContainer}>
           <div className={styles.allAdsContainer}>
             {ads.map((ad,index) => {
-            return(
-            <Card key={index} >
-              <div>
-                <h1>{ad.advertisingHeader}</h1>
-                <h3>Захиалагч:{ad.owner.name}</h3>
-                <p>{ad.detail}</p>
-              </div>
-            </Card>)
+              return(
+                <Card key={index}>
+                  <div onClick={()=>setSelectedAd(ad)}>
+                    <h1>{ad.advertisingHeader}</h1>
+                    <h3>Захиалагч:{ad.owner.name}</h3>
+                    <p>{ad.detail}</p>
+                    <p>{ad.createdAt}</p>
+                  </div>
+                </Card>
+              )
          })}
           </div>
           <div className={styles.adDetailContainer}>
-            <Card></Card> 
+            {selectedAd?
+            <Card>
+              <img style={{width:`100%`}} src={selectedAd.photo}/>
+              <h1>{selectedAd.advertisingHeader}</h1>  
+              <h3>Захиалагч:{selectedAd.owner.name}</h3>
+              <p>{selectedAd.detail}</p>
+            </Card> :<Card>
+              <div></div></Card>}
           </div>
         </div>
         </div>
