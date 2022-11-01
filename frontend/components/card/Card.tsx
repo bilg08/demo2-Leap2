@@ -22,5 +22,5 @@ type CardDataType = {
         owner: {
             name:String
         }
-    }
+    }|any
 }

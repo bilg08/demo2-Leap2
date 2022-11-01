@@ -3,22 +3,22 @@
   min-height: 120px;
   width: 100%;
 }
- .mainHomeContainer{
-  max-width: 1350px;
-  height: 100%;
-  margin: auto;
 
-}
 .sectionWithSearch{
+  width: 100%;
   display: flex;
   justify-content: center;
   gap:10px;
   align-items: center;
   border: 0.0625rem solid #e4e2e0;
-  padding: 20px;
+  height: 200px;
 }
 .adsContainer{
   display: flex;
+  max-width: 1350px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 .allAdsContainer{
   width: 50%;
@@ -35,4 +35,5 @@
     align-items: center;
     flex-flow: column;
   }
+  
 }

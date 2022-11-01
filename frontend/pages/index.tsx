@@ -11,7 +11,7 @@ import advertisings from "../data/advertisings.json" assert {type: 'json'}
 export default function Home() {
   
   const [userInput, setUserInput] = React.useState({});
-  const [ads, setAds] = React.useState([])
+  const [ads, setAds] = React.useState<Array<object>|[]>([])
   const handleSearch = () => {
     
   }
@@ -26,7 +26,6 @@ export default function Home() {
   })
   return (
     <div className={styles.container}>
-      <div className={styles.mainHomeContainer}>
       <div className={styles.sectionWithSearch}>
           <Input placeholder="Сургууль"
             icon={<AiOutlineSearch />}
@@ -36,16 +35,15 @@ export default function Home() {
           <Button onClick={handleSearch}>Хайх</Button>
         </div>
         <div className={styles.adsContainer}>
-          {/* {ads.length<=0?<p></p>:<div className={styles.allAdsContainer}>
+          <div className={styles.allAdsContainer}>
             {ads.map((ad,index) => {
            return <Card key={index} data={ad} />
          })}
-          </div>} */}
+          </div>
           <div className={styles.adDetailContainer}>
             details 
           </div>
         </div>
-      </div>
     </div>
   )
 }
