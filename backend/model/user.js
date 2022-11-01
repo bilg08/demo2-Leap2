@@ -2,9 +2,13 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const UserSchema = new mongoose.Schema({
-  email:{
-    type:String,
-    required: [true, "ХЭРЭГЛЭГЧИЙН НЭРИЙГ ОРУУЛНА УУ"],
+  name: {
+    type: String,
+    required: [true, "НЭРЭЭ ОРУУЛНА УУ"],
+  },
+  email: {
+    type: String,
+    required: [true, "Емайлаа ОРУУЛНА УУ"],
     unique: true,
     match: [
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
@@ -17,6 +21,6 @@ const UserSchema = new mongoose.Schema({
     required: [true, "НУУЦ ҮГ ОРУУЛНА УУ"],
     select: false,
   },
-})
+});
 
 module.exports = mongoose.model('User',UserSchema)

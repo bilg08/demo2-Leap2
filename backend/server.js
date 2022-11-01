@@ -5,12 +5,14 @@ const connectDB = require('./mongoDb');
 const cors = require('cors');
 const app = express();
 const userRouter = require('./router/user.js')
-
+const advertisingRouter = require("./router/ad.js");
 
 app.use(express.json());
 
-
 //advertising router
+app.use("/advertisings", advertisingRouter);
+
+//users router
 app.use('/users',userRouter)
 
 

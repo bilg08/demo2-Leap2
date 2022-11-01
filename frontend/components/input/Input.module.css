@@ -12,3 +12,10 @@
     border: none;
     outline: none;
 }
+@media (max-width:600px) {
+    .inputContainer{
+      width: 70%;
+      justify-content: space-between;
+    }
+    
+  }
