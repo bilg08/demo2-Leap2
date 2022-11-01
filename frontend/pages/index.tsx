@@ -5,13 +5,19 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 import advertisings from "../data/advertisings.json" assert {type: 'json'}
 
-
+type adsType = {
+  advertisingHeader:String,
+  detail:String,
+  owner:{
+    name:String
+  }
+}
 
 
 export default function Home() {
   
   const [userInput, setUserInput] = React.useState({});
-  const [ads, setAds] = React.useState<Array<object>|[]>([])
+  const [ads, setAds] = React.useState<adsType[]>([])
   const handleSearch = () => {
     
   }
@@ -34,21 +40,24 @@ export default function Home() {
           <Input placeholder="Хичээл"  name="subject"  icon={<MdLocationOn />} />
           <Button onClick={handleSearch}>Хайх</Button>
         </div>
+        <div style={{width:`100%`,backgroundColor: `#f6f5f4`}}>
         <div className={styles.adsContainer}>
           <div className={styles.allAdsContainer}>
             {ads.map((ad,index) => {
             return(
             <Card key={index} >
+              <div>
                 <h1>{ad.advertisingHeader}</h1>
                 <h3>Захиалагч:{ad.owner.name}</h3>
                 <p>{ad.detail}</p>
-                <Button onClick={() => console.log()}>Хийх</Button>
-           </Card>)
+              </div>
+            </Card>)
          })}
           </div>
           <div className={styles.adDetailContainer}>
             <Card></Card> 
           </div>
+        </div>
         </div>
     </div>
   )
