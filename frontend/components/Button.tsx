@@ -10,4 +10,4 @@ export const Button :React.FC<ButtonProps> = (props) => {
 
 }
 
-type ButtonProps = { children?: ReactNode,onClick:() =>void}
+type ButtonProps = { children?: ReactNode,onClick?:() =>void}
