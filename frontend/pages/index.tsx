@@ -3,8 +3,8 @@ import { Input, Button, Card } from '../components/index'
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 import advertisings from "../data/advertisings.json" assert {type: 'json'}
-import { useSelectedContext } from '../context';
-import { useWindowWidth } from '../hooks/windowWidth';
+import { useSelectedContext } from '../context/index';
+import { useWindowWidth } from '../hooks/index';
 
 type adsType = {
   advertisingHeader: String,
@@ -71,7 +71,7 @@ export default function Home() {
           </div>
 
 
-<div className={selectedAd?'w-6/12':''}>
+        <div className={selectedAd?'w-6/12':''}>
             {selectedAd && windowWidth > 935 &&
               <div className='fixed'>
                 <Card>

@@ -1,5 +1,4 @@
 import { PostModal, UserSideBar, ReceivedPosts } from "../components/index";
-import data from '../data/advertisings.json'
 import { useCollectionContext } from "../context/isActive";
 const UserProfile = () => {
 	const { cActive } = useCollectionContext();

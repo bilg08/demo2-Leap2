@@ -7,5 +7,5 @@ export * from './Card';
 export * from './userSideBar';
 export * from './receivedpost';
 export * from './postModel/Postmodel';
-export * from './ui/MenuList';
-export * from "./ui/MenuList2";
+export * from './ui/menuList';
+export * from "./ui/menuList2";

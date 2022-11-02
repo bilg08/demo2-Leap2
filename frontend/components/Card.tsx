@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelectedContext } from '../context';
+import { useSelectedContext } from '../context/index';
 export const Card = (props: CardDataType) => {
     const {children} = props;
     const { selectedAd } = useSelectedContext();
