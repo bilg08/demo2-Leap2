@@ -33,8 +33,6 @@ export default function Home() {
 
   return (
     <div className='w-full border-#57534e border-1'>
-
-
       <div className='flex h-40  justify-center flex-col items-center md:flex-row m-auto max-w-screen-xl gap-5'>
         <Input placeholder="Сургууль"
           onchange={setUserInput} userInput={userInput}
@@ -46,12 +44,12 @@ export default function Home() {
       </div>
 
 
-      <div style={{ minWidth: `50%`, backgroundColor: `#f6f5f4` }}>
-        <div className="max-w-screen-xl m-auto flex justify-center items-start">
-          <div className='m-5 w-6/12 flex flex-col gap-10 overflow-scroll'>
+      <div style={{backgroundColor: `#f6f5f4` }}>
+        <div className="max-w-screen-xl m-auto flex  justify-center items-start">
+          <div className='m-5 w-6/12 flex flex-col m-auto gap-10 overflow-scroll'>
             {ads.map((ad, index) => {
               return (
-                <Card key={index}>
+                <Card index={index} key={index}>
                   <div className="w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <div onClick={() => setOpenPostDropDown(e => !e)} className="flex justify-end px-4 pt-4">
                       <button id="dropdownButton" data-dropdown-toggle="dropdown" className="w-10 h-10  inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button">
@@ -59,7 +57,7 @@ export default function Home() {
                       </button>
                     </div>
                     <div className="flex flex-col items-center pb-10">
-                      <div onClick={() => setSelectedAd(ad)}>
+                      <div onClick={() => setSelectedAd({ad,index})}>
                         <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{ad.advertisingHeader}</h5>
                         <span className="text-sm text-gray-500 dark:text-gray-400">Захиалагч:{ad.owner.name}</span>
                         <p>{ad.detail}</p>
@@ -73,25 +71,25 @@ export default function Home() {
           </div>
 
 
-
-          <div className='w-1/2'>
+<div className={selectedAd?'w-6/12':''}>
             {selectedAd && windowWidth > 935 &&
               <div className='fixed'>
                 <Card>
                   <Card>
-                    <h1 className='text-4xl  font-bold'>{selectedAd.advertisingHeader}</h1>
-                    <h3 className='text-2xl font-bold color-silver'>Захиалагч:{selectedAd.owner.name}</h3>
-                    <p className='text-gray-500'>Зар тавигдсан хугацаа:{selectedAd.createdAt}</p>
+                    <h1 className='text-4xl  font-bold'>{selectedAd.ad.advertisingHeader}</h1>
+                    <h3 className='text-2xl font-bold color-silver'>Захиалагч:{selectedAd.ad.owner.name}</h3>
+                    <p className='text-gray-500'>Зар тавигдсан хугацаа:{selectedAd.ad.createdAt}</p>
                     <Button>Хийх</Button>
                   </Card>
                   <Card>
-                    <p>{selectedAd.detail}</p>
+                    <p>{selectedAd.ad.detail}</p>
                   </Card>
                 </Card>
               </div>
             }
 
-          </div>
+    </div>
+          
 
 
         </div>

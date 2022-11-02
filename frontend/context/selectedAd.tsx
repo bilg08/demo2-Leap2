@@ -4,17 +4,17 @@ type Props = {
 };
 
 interface CollectionContextInterface {
-  selectedAd: any;
+  selectedAd: object;
   setSelectedAd: (_val: any) => void;
 }
 
 export const SelectedAdContext = createContext<CollectionContextInterface>({
-  selectedAd: false,
+  selectedAd: {},
   setSelectedAd: (_val: any) => {},
 });
 
 export const SelectedAdContextProvider = ({children}:Props) => {
-  const [selectedAd,setSelectedAd] = useState<CollectionContextInterface|Boolean>()
+  const [selectedAd,setSelectedAd] = useState<CollectionContextInterface|any>()
     return(
         <SelectedAdContext.Provider value={{selectedAd,setSelectedAd}}>
             {children}
