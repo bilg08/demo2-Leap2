@@ -1,4 +1,5 @@
-import {PostModal,UserSideBar} from "../components/index"
+import { PostModal, UserSideBar, ReceivedPosts } from "../components/index";
+import data from '../data/advertisings.json'
 import { useCollectionContext } from "../context/isActive";
 const UserProfile = () => {
 	const { cActive } = useCollectionContext();
@@ -6,6 +7,7 @@ const UserProfile = () => {
 	return (
 		<div style={{ display: "flex", flexDirection: "row" }}>
 			<UserSideBar />
+			<ReceivedPosts/>
 			{cActive? <PostModal/> : ""}
 		</div>
 	);
