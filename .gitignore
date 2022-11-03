@@ -1,0 +1,5 @@
+./nodemodules
+./package-lock.json
+./package.json
+./yarn.lock
+./frontend_type/.next/cache/webpack
