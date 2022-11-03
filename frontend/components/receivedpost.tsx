@@ -2,7 +2,7 @@ import { Card } from "./Card";
 import data from "../data/advertisings.json";
 export const ReceivedPosts = () => {
 	return (
-		<div className='w-2/6 flex flex-row flex-wrap justify-center'>
+		<div className='w-2/6 h-screen flex flex-row flex-wrap justify-center overflow-y-scroll'>
 			<h1 className='text-4xl text-center mt-4'>Хүлээн авсан зар</h1>
 			<div className='flex flex-row flex-wrap justify-center w-screen md:w-screen lg:w-11/12 '>
 				{data.map((el, ind) => {
