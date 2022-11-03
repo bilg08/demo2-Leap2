@@ -37,13 +37,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-./next
-./vscode
-./eslintrc.json
-./next.config.js
-./package-lock.json
-./package.json
-./postcss.config.css
-./tailwind.config.css
-./tsconfig.json
-./yarn.lock
+../next
+../vscode
+../eslintrc.json
+../next.config.js
+../package-lock.json
+../package.json
+../postcss.config.css
+../tailwind.config.css
+../tsconfig.json
+../yarn.lock
