@@ -8,9 +8,9 @@ const PostSchema = new mongoose.Schema({
   //     maxLength: [50, "НЭРНЫ УРТ ИХ БАЙНА"],
   //   },
   isNew: {
-    type: String,
-    required: [true, "Шинэ эсэхийг оруулна уу"],
-    default: "Үнэ тохирно",
+    type: Boolean,
+    required: [true],
+    default: true,
   },
   advertisingHeader: {
     type: String,
@@ -24,6 +24,7 @@ const PostSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: [true, "Үнийг оруулна уу"],
+    default: "Үнэ тохирно",
   },
   detail: {
     type: String,

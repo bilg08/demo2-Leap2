@@ -48,7 +48,6 @@ exports.deletePost = async (req, res, next) => {
     if (!posts) {
       throw new MyError("not found", 400);
     }
-
     res.status(200).json({
       success: true,
       data: posts,
@@ -68,7 +67,6 @@ exports.updatePost = async (req, res, next) => {
     if (!posts) {
       throw new MyError("not found", 400);
     }
-
     res.status(200).json({
       success: true,
       data: posts,

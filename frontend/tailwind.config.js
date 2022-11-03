@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        border: "border 3s ease",
+        border: "border 1s ease",
       },
       keyframes: {
         border: {

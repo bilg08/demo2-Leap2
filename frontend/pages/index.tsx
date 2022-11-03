@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Input, Button, Card } from '../components/index'
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 import advertisings from "../data/advertisings.json" assert {type: 'json'}
 import { useSelectedContext } from '../context/index';
 import { useWindowWidth } from '../hooks/index';
+import axios from 'axios';
 
 type adsType = {
   advertisingHeader: String,
@@ -26,7 +27,18 @@ export default function Home() {
   const [ads, setAds] = useState<adsType[]>(advertisings);
   const [openPostDropDown, setOpenPostDropDown] = useState(false);
   const windowWidth = useWindowWidth();
-  console.log(windowWidth)
+
+  useEffect(() => {
+    async function getData() {
+
+      try {
+        const datas = await axios.get('http://localhost:8000/posts');
+        setAds(datas.data.data)
+
+      } catch (error) { }
+    };
+    getData()
+  }, [])
   const handleSearch = () => {
 
   }
@@ -44,7 +56,7 @@ export default function Home() {
       </div>
 
 
-      <div style={{backgroundColor: `#f6f5f4` }}>
+      <div style={{ backgroundColor: `#f6f5f4` }}>
         <div className="max-w-screen-xl m-auto flex  justify-center items-start">
           <div className='m-5 w-6/12 flex flex-col m-auto gap-10 overflow-scroll'>
             {ads.map((ad, index) => {
@@ -57,9 +69,9 @@ export default function Home() {
                       </button>
                     </div>
                     <div className="flex flex-col items-center pb-10">
-                      <div onClick={() => setSelectedAd({ad,index})}>
+                      <div onClick={() => setSelectedAd({ ad, index })}>
                         <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">{ad.advertisingHeader}</h5>
-                        <span className="text-sm text-gray-500 dark:text-gray-400">Захиалагч:{ad.owner.name}</span>
+                        {/* <span className="text-sm text-gray-500 dark:text-gray-400">Захиалагч:{ad.owner.name}</span> */}
                         <p>{ad.detail}</p>
                         <p className='text-gray-500'>Зар тавигдсан хугацаа:{ad.createdAt}</p>
                       </div>
@@ -71,13 +83,13 @@ export default function Home() {
           </div>
 
 
-        <div className={selectedAd?'w-6/12':''}>
-            {selectedAd && windowWidth > 935 &&
+          {selectedAd && windowWidth > 935 &&
+            <div className={selectedAd ? 'w-6/12' : ''}>
               <div className='fixed'>
                 <Card>
                   <Card>
                     <h1 className='text-4xl  font-bold'>{selectedAd.ad.advertisingHeader}</h1>
-                    <h3 className='text-2xl font-bold color-silver'>Захиалагч:{selectedAd.ad.owner.name}</h3>
+                    <h3 className='text-2xl font-bold color-silver'>Захиалагч:Билгүүн</h3>
                     <p className='text-gray-500'>Зар тавигдсан хугацаа:{selectedAd.ad.createdAt}</p>
                     <Button>Хийх</Button>
                   </Card>
@@ -86,12 +98,9 @@ export default function Home() {
                   </Card>
                 </Card>
               </div>
-            }
 
-    </div>
-          
-
-
+            </div>
+          }
         </div>
       </div>
     </div>
